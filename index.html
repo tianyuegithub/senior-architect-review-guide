@@ -68,23 +68,15 @@
     }
 
     .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 0;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
     }
 
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      border: 1.5px solid var(--border);
-      border-radius: 6px;
-      background: var(--paper);
-      padding: 6px 10px;
+    .hero-meta a {
       color: var(--ink);
-      font-size: 14px;
-      font-weight: 800;
+      text-decoration: none;
     }
 
     h1 {
@@ -379,10 +371,7 @@
       <div>
         <p class="eyebrow">Senior Architect Review Skill Guide</p>
         <h1>资深架构师评审：把方案先放到真实世界里摔一遍</h1>
-        <div class="hero-meta" aria-label="作者与日期">
-          <span>作者：田越 @tianyuegithub</span>
-          <span>日期：2026-07-09</span>
-        </div>
+        <p class="hero-meta">田越 <a href="https://github.com/tianyuegithub">@tianyuegithub</a> · 2026-07-09</p>
         <p class="lead"><code>my-senior-architect-review</code> 是一个固定的挑战评审流程。它的灵魂是“不迎合”：不把用户偏好、模型惯性或礼貌性附和伪装成架构判断，而是用第一性原理、系统边界、失败模式和 Toulmin-lite（轻量 Toulmin）论证链，判断一个需求或技术方向是否真的值得推进。</p>
       </div>
       <aside class="hero-panel" aria-label="手册摘要">
