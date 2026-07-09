@@ -229,7 +229,8 @@
       box-shadow: 0 14px 28px rgba(31, 41, 51, 0.08);
     }
 
-    .visual img {
+    .visual img,
+    .visual > svg {
       display: block;
       width: 100%;
       min-width: 980px;
@@ -449,7 +450,153 @@
         <p>这张 SVG 把技能流程和 Toulmin-lite 的作用放在一张图里：输入先经过第一性原理评审，再经过论证链门禁，最后形成四类清晰结论。</p>
       </div>
       <div class="visual">
-        <img src="senior-architect-review-guide.svg" alt="资深架构师评审与 Toulmin-lite 论证链总览">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="980" viewBox="0 0 1440 980" role="img" aria-labelledby="title desc">
+          <title id="title">资深架构师评审与 Toulmin-lite 论证链总览</title>
+          <desc id="desc">展示 my-senior-architect-review 技能如何从需求提案进入第一性原理评审，再通过 Toulmin-lite 的主张、证据、推理桥梁、反驳和结论强度形成可审计结论。</desc>
+          <defs>
+            <style>
+              .bg { fill: #f4f1e8; }
+              .paper { fill: #ffffff; stroke: #1f2933; stroke-width: 2.2; }
+              .ink { fill: #1f2933; }
+              .muted { fill: #596579; }
+              .blue { fill: #e5f0ff; stroke: #1f2933; stroke-width: 2; }
+              .green { fill: #e7f6ed; stroke: #1f2933; stroke-width: 2; }
+              .amber { fill: #fff1c9; stroke: #1f2933; stroke-width: 2; }
+              .red { fill: #fde4e4; stroke: #1f2933; stroke-width: 2; }
+              .violet { fill: #eee8fb; stroke: #1f2933; stroke-width: 2; }
+              .slate { fill: #edf0f3; stroke: #1f2933; stroke-width: 2; }
+              .line { fill: none; stroke: #596579; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+              .line-soft { fill: none; stroke: #9aa3af; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowSoft); }
+              .title { font: 800 38px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; letter-spacing: 0; }
+              .subtitle { font: 500 19px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+              .section { font: 800 23px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+              .label { font: 800 21px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+              .body { font: 500 16px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+              .small { font: 500 14px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+              .code { font: 700 14px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+              .index { font: 800 16px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #ffffff; }
+            </style>
+            <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+              <path d="M2,2 L10,6 L2,10 Z" fill="#596579"/>
+            </marker>
+            <marker id="arrowSoft" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+              <path d="M2,2 L10,6 L2,10 Z" fill="#9aa3af"/>
+            </marker>
+          </defs>
+
+          <rect class="bg" width="1440" height="980"/>
+          <text class="title ink" x="64" y="76">资深架构师评审：先证明，再推进</text>
+          <text class="subtitle muted" x="64" y="111">灵魂是不迎合：不把偏好包装成事实，不把礼貌性附和伪装成架构判断。</text>
+          <g transform="translate(64 150)">
+            <rect class="paper" x="0" y="0" width="382" height="160" rx="8"/>
+            <circle cx="31" cy="34" r="17" fill="#1f2933"/>
+            <text class="index" x="26" y="40">1</text>
+            <text class="label ink" x="60" y="41">触发输入</text>
+            <text class="body muted" x="28" y="78">需求、架构方向、接口合同、数据模型</text>
+            <text class="body muted" x="28" y="105">权限边界、长期演进、重大实现策略</text>
+            <text class="body muted" x="28" y="132">先把“用户想要什么”还原成真实问题</text>
+          </g>
+
+          <g transform="translate(529 150)">
+            <rect class="amber" x="0" y="0" width="382" height="160" rx="8"/>
+            <circle cx="31" cy="34" r="17" fill="#1f2933"/>
+            <text class="index" x="26" y="40">2</text>
+            <text class="label ink" x="60" y="41">第一性原理评审</text>
+            <text class="body muted" x="28" y="78">目标是否对准真实问题</text>
+            <text class="body muted" x="28" y="105">所有权、信任边界、数据流、回滚</text>
+            <text class="body muted" x="28" y="132">复杂度、长期维护成本、失败模式</text>
+          </g>
+
+          <g transform="translate(994 150)">
+            <rect class="red" x="0" y="0" width="382" height="160" rx="8"/>
+            <circle cx="31" cy="34" r="17" fill="#1f2933"/>
+            <text class="index" x="26" y="40">3</text>
+            <text class="label ink" x="60" y="41">Toulmin-lite 门禁</text>
+            <text class="body muted" x="28" y="78">结论必须有主张、证据和推理桥梁</text>
+            <text class="body muted" x="28" y="105">必须写出例外、反驳和结论强度</text>
+            <text class="body muted" x="28" y="132">弱论证只能进入澄清或条件支持</text>
+          </g>
+
+          <path class="line" d="M446 230 H529"/>
+          <path class="line" d="M911 230 H994"/>
+
+          <text class="section ink" x="64" y="374">Toulmin-lite 五件事</text>
+          <text class="subtitle muted" x="64" y="404">从完整 Toulmin 理论抽取最适合工程评审的最小闭环。</text>
+
+          <g transform="translate(64 438)">
+            <rect class="blue" x="0" y="0" width="238" height="148" rx="8"/>
+            <text class="label ink" x="24" y="38">主张</text>
+            <text class="code muted" x="24" y="66">Claim（主张）</text>
+            <text class="body muted" x="24" y="100">要支持、反对或</text>
+            <text class="body muted" x="24" y="126">有条件推进的结论</text>
+          </g>
+
+          <g transform="translate(330 438)">
+            <rect class="green" x="0" y="0" width="238" height="148" rx="8"/>
+            <text class="label ink" x="24" y="38">证据</text>
+            <text class="code muted" x="24" y="66">Grounds（依据）</text>
+            <text class="body muted" x="24" y="100">源码、运行证据、</text>
+            <text class="body muted" x="24" y="126">约束、用户确认事实</text>
+          </g>
+
+          <g transform="translate(596 438)">
+            <rect class="amber" x="0" y="0" width="238" height="148" rx="8"/>
+            <text class="label ink" x="24" y="38">推理桥梁</text>
+            <text class="code muted" x="24" y="66">Warrant（论证规则）</text>
+            <text class="body muted" x="24" y="100">为什么这些证据</text>
+            <text class="body muted" x="24" y="126">能推出该结论</text>
+          </g>
+
+          <g transform="translate(862 438)">
+            <rect class="red" x="0" y="0" width="238" height="148" rx="8"/>
+            <text class="label ink" x="24" y="38">例外 / 反驳</text>
+            <text class="code muted" x="24" y="66">Rebuttal（反驳）</text>
+            <text class="body muted" x="24" y="100">什么情况会削弱、</text>
+            <text class="body muted" x="24" y="126">推翻或阻塞结论</text>
+          </g>
+
+          <g transform="translate(1128 438)">
+            <rect class="violet" x="0" y="0" width="248" height="148" rx="8"/>
+            <text class="label ink" x="24" y="38">结论强度</text>
+            <text class="code muted" x="24" y="66">Qualifier（限定词）</text>
+            <text class="body muted" x="24" y="100">强 / 中 / 弱 / 待证据</text>
+            <text class="body muted" x="24" y="126">避免过度自信</text>
+          </g>
+
+          <path class="line-soft" d="M302 512 H330"/>
+          <path class="line-soft" d="M568 512 H596"/>
+          <path class="line-soft" d="M834 512 H862"/>
+          <path class="line-soft" d="M1100 512 H1128"/>
+
+          <g transform="translate(64 666)">
+            <rect class="paper" x="0" y="0" width="410" height="190" rx="8"/>
+            <text class="section ink" x="28" y="42">不迎合是灵魂</text>
+            <text class="body muted" x="28" y="82">不把偏好包装成事实。</text>
+            <text class="body muted" x="28" y="112">不把折中伪装成判断。</text>
+            <text class="body muted" x="28" y="142">不让实施替代思考。</text>
+            <text class="body muted" x="28" y="172">证据不够就明确澄清或反对。</text>
+          </g>
+
+          <g transform="translate(515 666)">
+            <rect class="paper" x="0" y="0" width="410" height="190" rx="8"/>
+            <text class="section ink" x="28" y="42">它防止三类假绿</text>
+            <text class="body muted" x="28" y="82">只给结论，不给证据。</text>
+            <text class="body muted" x="28" y="112">有证据，但证据推不出结论。</text>
+            <text class="body muted" x="28" y="142">忽略例外条件，把不确定说成确定。</text>
+            <text class="body muted" x="28" y="172">把用户偏好包装成架构原则。</text>
+          </g>
+
+          <g transform="translate(966 666)">
+            <rect class="paper" x="0" y="0" width="410" height="190" rx="8"/>
+            <text class="section ink" x="28" y="42">使用边界</text>
+            <text class="body muted" x="28" y="82">用于高影响需求和架构判断。</text>
+            <text class="body muted" x="28" y="112">不替代代码评审、测试或运行验证。</text>
+            <text class="body muted" x="28" y="142">弱证据结论必须降级处理。</text>
+            <text class="body muted" x="28" y="172">进入实施前先写清条件。</text>
+          </g>
+
+          <text class="small muted" x="64" y="928">适用技能：my-senior-architect-review/SKILL.md。核心新增点：Toulmin-Lite Argument Check（轻量 Toulmin 论证检查）。</text>
+        </svg>
       </div>
     </section>
 
