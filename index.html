@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>资深架构师评审 Skill 介绍手册</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f2933'/%3E%3Cpath d='M8 17h16M8 11h16M8 23h10' stroke='%23ffffff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f1e8;
+      --paper: #ffffff;
+      --ink: #1f2933;
+      --muted: #5f6b7a;
+      --line: #d6d2c6;
+      --border: #24313f;
+      --blue: #e5f0ff;
+      --green: #e7f6ed;
+      --amber: #fff1c9;
+      --red: #fde4e4;
+      --violet: #eee8fb;
+      --slate: #edf0f3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.62;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 22px 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 32px;
+      align-items: end;
+      min-height: 460px;
+      padding: 44px 0 32px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 0;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      background: var(--paper);
+      padding: 6px 10px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: 56px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 22px 0 0;
+      font-size: 21px;
+      color: var(--muted);
+    }
+
+    .hero-panel {
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 22px;
+      box-shadow: 0 16px 34px rgba(31, 41, 51, 0.08);
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .quick span {
+      display: block;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 10px;
+      font-size: 14px;
+      font-weight: 800;
+      background: var(--slate);
+    }
+
+    section {
+      padding: 58px 0;
+      border-bottom: 1.5px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 28px;
+      margin-bottom: 26px;
+      align-items: start;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .section-head p,
+    .text p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tile {
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 20px;
+      min-height: 180px;
+    }
+
+    .tile h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+
+    .tile p,
+    .tile li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tile p {
+      margin: 0;
+    }
+
+    .tile ul {
+      margin: 0;
+      padding-left: 19px;
+    }
+
+    .tile li + li {
+      margin-top: 7px;
+    }
+
+    .blue { background: var(--blue); }
+    .green { background: var(--green); }
+    .amber { background: var(--amber); }
+    .red { background: var(--red); }
+    .violet { background: var(--violet); }
+    .slate { background: var(--slate); }
+
+    .visual {
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: var(--paper);
+      overflow: auto;
+      box-shadow: 0 14px 28px rgba(31, 41, 51, 0.08);
+    }
+
+    .visual img {
+      display: block;
+      width: 100%;
+      min-width: 980px;
+      height: auto;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 17px;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .steps strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .steps span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+
+    th,
+    td {
+      border-bottom: 1.5px solid var(--line);
+      border-right: 1.5px solid var(--line);
+      padding: 14px;
+      vertical-align: top;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    th {
+      background: var(--slate);
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.95em;
+      color: #17324d;
+      background: rgba(23, 50, 77, 0.08);
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+
+    .quote {
+      border-left: 6px solid var(--border);
+      background: var(--paper);
+      padding: 20px 24px;
+      font-size: 22px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 28px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 22px 14px 48px;
+      }
+
+      .hero,
+      .section-head,
+      .grid,
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 0;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .quick {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Senior Architect Review Skill Guide</p>
+        <h1>资深架构师评审：把方案先放到真实世界里摔一遍</h1>
+        <div class="hero-meta" aria-label="作者与日期">
+          <span>作者：田越 @tianyuegithub</span>
+          <span>日期：2026-07-09</span>
+        </div>
+        <p class="lead"><code>my-senior-architect-review</code> 是一个固定的挑战评审流程。它的灵魂是“不迎合”：不把用户偏好、模型惯性或礼貌性附和伪装成架构判断，而是用第一性原理、系统边界、失败模式和 Toulmin-lite（轻量 Toulmin）论证链，判断一个需求或技术方向是否真的值得推进。</p>
+      </div>
+      <aside class="hero-panel" aria-label="手册摘要">
+        <h2>一句话定位</h2>
+        <p>先不迎合，再做判断。在进入计划和实施之前，让资深架构师视角明确回答：这个主张有什么证据、为什么能推出、哪些条件会推翻、结论到底有多强。</p>
+        <div class="quick">
+          <span>不迎合</span>
+          <span>证据优先</span>
+          <span>边界清晰</span>
+          <span>反例前置</span>
+        </div>
+      </aside>
+    </header>
+
+    <section>
+      <div class="section-head">
+        <h2>它解决什么问题</h2>
+        <p>很多工程失败不是因为代码写不出来，而是因为进入实现前没有把目标、边界、证据和反例讲清楚。这个 skill 的价值，是把“感觉可行”的讨论变成“可审计、可反驳、可进入实施条件”的判断。</p>
+      </div>
+      <div class="quote" style="margin-bottom: 18px;">不迎合不是态度强硬，而是专业责任：当证据不足、边界不清或方向错误时，必须明确说“不建议”或“需要澄清”。</div>
+      <div class="grid">
+        <article class="tile red">
+          <h3>防止把用户偏好当架构原则</h3>
+          <p>用户提出的方案可能只是症状表达。评审必须先还原真实问题，再判断提法是否对准问题。</p>
+        </article>
+        <article class="tile amber">
+          <h3>防止证据链断裂</h3>
+          <p>不是有证据就足够；还必须说明证据为什么能推出结论。缺少推理桥梁时，结论不能装作可靠。</p>
+        </article>
+        <article class="tile green">
+          <h3>防止过早实施</h3>
+          <p>如果权限、数据流、回滚、部署、生命周期或失败模式没有讲清，正确动作是澄清或有条件支持，而不是立即开工。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>为什么不迎合是灵魂</h2>
+        <p>架构评审最危险的失败，不是语气不够友好，而是为了显得配合，把一个证据不足、边界不清或长期成本失控的方向推进到实现阶段。</p>
+      </div>
+      <div class="grid">
+        <article class="tile red">
+          <h3>拒绝把偏好包装成事实</h3>
+          <p>用户可以提出方向，但评审必须检查这个方向是否真的解决问题，不能把“想要这样做”直接改写成“应该这样做”。</p>
+        </article>
+        <article class="tile amber">
+          <h3>拒绝用折中掩盖判断</h3>
+          <p>当方案不成立时，不应该给出双轨命名、温和折中或“都可以”的伪中立结论。</p>
+        </article>
+        <article class="tile green">
+          <h3>拒绝让实施替代思考</h3>
+          <p>能实现不等于该实现。进入实施前，必须先证明目标、证据、推理和反例都站得住。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>方法总览图</h2>
+        <p>这张 SVG 把技能流程和 Toulmin-lite 的作用放在一张图里：输入先经过第一性原理评审，再经过论证链门禁，最后形成四类清晰结论。</p>
+      </div>
+      <div class="visual">
+        <img src="senior-architect-review-guide.svg" alt="资深架构师评审与 Toulmin-lite 论证链总览">
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>什么时候启动</h2>
+        <p>它不是给小修小补用的。它应该出现在“方向错了会很贵”的地方，尤其是跨模块、跨权限、跨数据边界或长期演进相关的问题。</p>
+      </div>
+      <div class="grid two">
+        <article class="tile blue">
+          <h3>应该启动</h3>
+          <ul>
+            <li>新需求、架构变更、技术路线选择。</li>
+            <li>接口合同、数据模型、权限边界、状态流转。</li>
+            <li>可靠性、可观测性、部署形态、回滚策略。</li>
+            <li>长期演进、跨仓库、跨服务或难回退改造。</li>
+          </ul>
+        </article>
+        <article class="tile slate">
+          <h3>不该启动</h3>
+          <ul>
+            <li>一句话事实问答。</li>
+            <li>纯命令执行。</li>
+            <li>不改变行为、边界和风险的小实现细节。</li>
+            <li>已经有明确合同且只做机械执行的小变更。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Toulmin 理论体系如何进入这里</h2>
+        <p>Toulmin 论证模型由 Stephen Toulmin 在《The Uses of Argument》中提出，核心不是“写得像论文”，而是拆开一个论证的承重结构。这个 skill 没有引入完整学术模板，而是抽取最适合工程评审的轻量版本。</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>完整 Toulmin 概念</th>
+            <th>中文解释</th>
+            <th>在技能中的落点</th>
+            <th>工程意义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Claim</code></td>
+            <td>主张：要证明的结论。</td>
+            <td>输出中的“结论”和“论证链检查-主张”。</td>
+            <td>迫使评审说清楚到底支持、反对还是有条件支持什么。</td>
+          </tr>
+          <tr>
+            <td><code>Grounds/Data</code></td>
+            <td>依据/事实：支撑主张的证据。</td>
+            <td>源码、配置、运行证据、用户确认约束、系统边界。</td>
+            <td>防止凭经验或偏好下判断。</td>
+          </tr>
+          <tr>
+            <td><code>Warrant</code></td>
+            <td>论证规则/推理桥梁：为什么证据能推出主张。</td>
+            <td>输出中的“推理桥梁”。</td>
+            <td>这是最关键的一环：很多假结论败在“证据是真的，但推不出结论”。</td>
+          </tr>
+          <tr>
+            <td><code>Backing</code></td>
+            <td>支持：支撑推理规则的更底层原则。</td>
+            <td>第一性原理、权限原则、数据一致性、可回滚性、长期维护成本。</td>
+            <td>把局部判断拉回系统原则，而不是局部补丁思维。</td>
+          </tr>
+          <tr>
+            <td><code>Qualifier</code></td>
+            <td>限定词：结论成立的强度。</td>
+            <td><code>强</code>、<code>中</code>、<code>弱</code>、<code>待证据</code>。</td>
+            <td>防止把不确定结论包装成确定结论。</td>
+          </tr>
+          <tr>
+            <td><code>Rebuttal</code></td>
+            <td>反驳/例外：什么情况下结论不成立。</td>
+            <td>输出中的“例外/反驳”。</td>
+            <td>提前暴露失败条件、阻塞条件和回退边界。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>为什么叫 Toulmin-lite</h2>
+        <p>完整 Toulmin 模型适合严肃论证分析，但工程现场不能把每次评审都变成学术审稿。这里保留最有杀伤力的五件事：主张、证据、推理桥梁、例外/反驳、结论强度。</p>
+      </div>
+      <div class="grid">
+        <article class="tile blue">
+          <h3>轻量，不简陋</h3>
+          <p>不要求写完整论文式结构，但关键结论必须能被追问、被证据支撑、被反例挑战。</p>
+        </article>
+        <article class="tile violet">
+          <h3>审计，不装饰</h3>
+          <p>论证链不是为了让文档更漂亮，而是为了定位哪一段推理不成立。</p>
+        </article>
+        <article class="tile red">
+          <h3>弱证据，不强推</h3>
+          <p>如果证据不足或反例未处理，结论必须降级为 <code>需要澄清</code> 或 <code>有条件支持</code>。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>评审流程</h2>
+        <p>这个 skill 的流程是刻意“先挑战、再结论、后条件”。它不从用户给的方案开始实施，而是从真实问题和系统约束开始判断。</p>
+      </div>
+      <ol class="steps">
+        <li><div><strong>复述提案</strong><span>用一句话说明用户提出了什么，避免一开始就跑偏。</span></div></li>
+        <li><div><strong>还原第一性目标</strong><span>判断真实要解决的是用户、业务、系统还是运维问题。</span></div></li>
+        <li><div><strong>检查硬边界</strong><span>所有权、信任边界、数据流、权限、一致性、延迟、生命周期、部署和回滚。</span></div></li>
+        <li><div><strong>寻找失败模式</strong><span>错误假设、隐藏耦合、边界条件、迁移风险、观测缺口和维护负担。</span></div></li>
+        <li><div><strong>运行 Toulmin-lite 论证检查</strong><span>检查主张、证据、推理桥梁、例外/反驳和结论强度。</span></div></li>
+        <li><div><strong>比较更简单替代方案</strong><span>如果更小、更可逆、更可验证的方案能解决问题，就不该上复杂方案。</span></div></li>
+        <li><div><strong>给出四类结论之一</strong><span><code>支持</code>、<code>有条件支持</code>、<code>不建议</code>、<code>需要澄清</code>，不能给模糊折中。</span></div></li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>输出合同</h2>
+        <p>真正有价值的评审结论不是“看起来合理”，而是每一段都能让后续计划、实现、验证和收口接得上。</p>
+      </div>
+      <div class="grid two">
+        <article class="tile amber">
+          <h3>固定结构</h3>
+          <ul>
+            <li>结论：四选一。</li>
+            <li>第一性原理判断。</li>
+            <li>关键漏洞或错误假设。</li>
+            <li>论证链检查。</li>
+            <li>系统影响。</li>
+            <li>替代方案。</li>
+            <li>进入实施条件。</li>
+          </ul>
+        </article>
+        <article class="tile green">
+          <h3>论证链检查</h3>
+          <ul>
+            <li>主张：本次评审最重要的结论。</li>
+            <li>证据：支撑该结论的关键事实。</li>
+            <li>推理桥梁：为什么证据能推出结论。</li>
+            <li>例外/反驳：哪些条件会削弱或推翻结论。</li>
+            <li>结论强度：强 / 中 / 弱 / 待证据。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>四类结论怎么理解</h2>
+        <p>这四个结论是工程决策闸门，不是语气标签。它们决定后续是否能进入计划、是否要补证据、是否应该停止。</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>结论</th>
+            <th>含义</th>
+            <th>后续动作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>支持</code></td>
+            <td>目标对准，证据链完整，边界和反例可控。</td>
+            <td>可以进入计划或实施，但仍需写清验证标准。</td>
+          </tr>
+          <tr>
+            <td><code>有条件支持</code></td>
+            <td>方向可能正确，但缺少关键前置条件或验证证据。</td>
+            <td>先补条件、合同、实验或风险控制，再实施。</td>
+          </tr>
+          <tr>
+            <td><code>不建议</code></td>
+            <td>目标错位、成本收益不成立、破坏边界或长期维护代价过高。</td>
+            <td>停止当前方案，改走替代路径。</td>
+          </tr>
+          <tr>
+            <td><code>需要澄清</code></td>
+            <td>关键信息缺失，无法负责任地给出支持或反对。</td>
+            <td>补用户意图、运行证据、约束边界或 owner 决策。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>它和普通 code review 的区别</h2>
+        <p>普通 code review（代码评审）通常在改动之后检查实现质量；资深架构师评审在计划和实现之前检查方向是否该做。两者不是替代关系。</p>
+      </div>
+      <div class="grid">
+        <article class="tile slate">
+          <h3>资深架构师评审</h3>
+          <p>前置判断：目标、边界、复杂度、失败模式、替代方案、实施条件。</p>
+        </article>
+        <article class="tile blue">
+          <h3>代码评审</h3>
+          <p>后置检查：diff、行为回归、测试覆盖、安全风险、假修复和可维护性。</p>
+        </article>
+        <article class="tile green">
+          <h3>组合效果</h3>
+          <p>前者减少方向性浪费，后者减少实现性缺陷。复杂任务两者都需要。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>反模式</h2>
+        <p>这个技能最怕被用成“高级措辞生成器”。如果它没有更尖锐、更可验证、更能阻止错误实施，就说明用错了。</p>
+      </div>
+      <div class="grid two">
+        <article class="tile red">
+          <h3>错误用法</h3>
+          <ul>
+            <li>只复述用户想法，然后温和附和。</li>
+            <li>用“视情况而定”逃避判断。</li>
+            <li>不写反例，不写结论强度。</li>
+            <li>把多个方向都保留，制造伪折中。</li>
+            <li>用理论名词掩盖没有证据。</li>
+          </ul>
+        </article>
+        <article class="tile green">
+          <h3>正确用法</h3>
+          <ul>
+            <li>先指出方案真正要解决的问题。</li>
+            <li>明确支持、不建议、需要澄清或有条件支持。</li>
+            <li>把最强反例提前写出来。</li>
+            <li>给出更简单、更可逆的替代方案。</li>
+            <li>进入实施前写清条件和验证证据。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>落地建议</h2>
+        <p>这个技能最适合放在计划和实施之前，用来阻止方向性错误。它不替代代码评审，也不替代验证；它负责把“是否值得做、按什么条件做、什么情况下停止”讲清楚。</p>
+      </div>
+      <div class="quote">没有论证链，就不要进入实施；没有反例检查，就不要声称结论可靠。</div>
+      <div class="grid" style="margin-top: 18px;">
+        <article class="tile blue">
+          <h3>进入计划前</h3>
+          <p>先确认目标、边界、证据和失败模式，再写执行计划。</p>
+        </article>
+        <article class="tile red">
+          <h3>进入实施前</h3>
+          <p>弱证据结论必须降级为澄清或有条件支持，不能直接开工。</p>
+        </article>
+        <article class="tile amber">
+          <h3>进入收口前</h3>
+          <p>回看最初的主张和实施条件，确认真实验证已经覆盖关键反例。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>推荐给团队的使用话术</h2>
+        <p>真正好的介绍手册不是只讲“它很好”，而是让团队知道什么时候必须用、用完应该得到什么。</p>
+      </div>
+      <div class="grid two">
+        <article class="tile violet">
+          <h3>一句话推广</h3>
+          <p>任何会影响接口、权限、数据、部署、长期演进或跨模块边界的方案，先过一遍资深架构师评审；没有论证链，就不要进入实施。</p>
+        </article>
+        <article class="tile amber">
+          <h3>使用检查</h3>
+          <p>评审完成后，至少要能回答：结论是什么、证据是什么、为什么能推出、什么情况会失败、现在是否能实施。</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>来源依据：<code>my-senior-architect-review/SKILL.md</code>，重点参考 <code>Toulmin-Lite Argument Check（轻量 Toulmin 论证检查）</code>、评审步骤和输出合同。文件形态：HTML + 独立 SVG，适合直接打开或作为团队说明材料继续迭代。</p>
+    </footer>
+  </main>
+</body>
+</html>
